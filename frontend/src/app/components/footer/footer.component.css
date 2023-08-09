@@ -41,28 +41,40 @@
     opacity:1;
   }
 
-  .footer-clean .item.social {
+  .footer-clean .social {
     text-align:center;
   }
 
-  @media (min-width:42rem) {
+  /* .footer-clean .item {
+
+  }
+   */
+
+   .footer-clean .social {
+    text-align:center;
+  }
+  .footer-clean .itemsContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  /* @media (min-width:42rem) { */
     .footer-clean .item {
       text-align:center;
       padding-bottom:20px;
     }
-  }
 
   @media (min-width: 55rem) {
-    .footer-clean .item.social {
+    .footer-clean .social {
       text-align:center;
     }
-    .footer-clean .item {
-        display: flex;
-        justify-content: space-between;
+    .footer-clean .itemsContainer {
+        flex-direction: row;
+        justify-content: space-evenly;
     }
   }
 
-  .footer-clean .item.social > a {
+  .footer-clean .social > a {
     font-size:24px;
     width:40px;
     height:40px;
@@ -75,20 +87,23 @@
     margin-top:22px;
     color:inherit;
     opacity:0.75;
+    @media (min-width: 55rem) {
+      display:
+    }
   }
 
-  .footer-clean .item.social > a:hover {
+  .footer-clean .social > a:hover {
     opacity:0.9;
   }
 
   @media (min-width:42rem) {
-    .footer-clean .item.social > a {
+    .footer-clean .social > a {
       margin-top:40px;
     }
   }
 
   @media (min-width:55rem) {
-    .footer-clean .item.social > a {
+    .footer-clean .social > a {
       margin-top:10px;
     }
   }

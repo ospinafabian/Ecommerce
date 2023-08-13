@@ -1,0 +1,10 @@
+<div class="review-stars">
+    <ng-container *ngFor="let _ of [].constructor(fullStars); let i = index">
+      <span class="star">&#9733;</span>
+    </ng-container>
+    <span class="star" *ngIf="hasHalfStar">&#9733;</span>
+    <ng-container *ngFor="let _ of [].constructor(emptyStars); let i = index">
+      <span class="star empty">&#9733;</span>
+    </ng-container>
+  </div>
+  

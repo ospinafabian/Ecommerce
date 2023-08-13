@@ -1,0 +1,13 @@
+.review-stars {
+    color: gold; /* Change the color as needed */
+    font-size: 24px; /* Adjust the size as needed */
+  }
+  
+  .star {
+    display: inline-block;
+  }
+  
+  .empty {
+    color: lightgray;
+  }
+  

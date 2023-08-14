@@ -1,4 +1,5 @@
 import { Product } from "../types/products.types";
+import { ServiceLayerResponse } from "../types/api.types";
 import {
     readProducts,
     readProductsByName,
@@ -7,14 +8,7 @@ import {
     deleteProductById
 } from '../data/products.data';
 
-interface ServiceLayerResponse {
-    code: number,
-    result?: Product | Product[],
-    message?: string,
-    errorMessage?: unknown,
-}
-
-const getProducts = ():Promise <ServiceLayerResponse> => {
+const getProducts = ():Promise <ServiceLayerResponse<Product>> => {
     return new Promise ((resolve, reject) => {
         readProducts()
             .then((dataLayerResponse: Product[]) => {
@@ -27,7 +21,7 @@ const getProducts = ():Promise <ServiceLayerResponse> => {
     });
 };
 
-const getProductsbyName = (name:string): Promise<ServiceLayerResponse> => {
+const getProductsbyName = (name:string): Promise<ServiceLayerResponse<Product>> => {
     return new Promise ((resolve, reject) => {
         readProductsByName(name)
         .then((dataLayerResponse) => {
@@ -44,7 +38,7 @@ const getProductsbyName = (name:string): Promise<ServiceLayerResponse> => {
     });
 };
 
-const postProduct = (body: Product): Promise<ServiceLayerResponse> => {
+const postProduct = (body: Product): Promise<ServiceLayerResponse<Product>> => {
     return new Promise ((resolve, reject) => {
         createProduct(body)
         .then((dataLayerResponse) => {
@@ -56,7 +50,7 @@ const postProduct = (body: Product): Promise<ServiceLayerResponse> => {
     });
 };
 
-const putProduct = (id: string, body: Product): Promise<ServiceLayerResponse> => {
+const putProduct = (id: string, body: Product): Promise<ServiceLayerResponse<Product>> => {
     return new Promise ((resolve, reject) => {
         updateProduct(id, body)
         .then((dataLayerResponse) => {
@@ -74,7 +68,7 @@ const putProduct = (id: string, body: Product): Promise<ServiceLayerResponse> =>
     });
 };
 
-const deleteProduct = (id: string): Promise<ServiceLayerResponse> => {
+const deleteProduct = (id: string): Promise<ServiceLayerResponse<Product>> => {
     return new Promise ((resolve, reject) => {
         deleteProductById(id)
         .then ((dataLayerResponse) => {

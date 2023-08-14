@@ -11,6 +11,7 @@ import { ShoppingCartComponent } from './views/shopping-cart/shopping-cart.compo
 import { CheckoutComponent } from './views/checkout/checkout.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { StarRatingComponent } from './views/home/components/star-rating/star-rating.component';
+import { RegisterComponent } from './views/register/register.component';
 
 
 
@@ -24,7 +25,8 @@ import { StarRatingComponent } from './views/home/components/star-rating/star-ra
     CheckoutComponent,
     HeaderComponent,
     FooterComponent,
-    StarRatingComponent
+    StarRatingComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,15 @@
 /* @media {min-width: ;} */
+
+img {
+     height: 9.375rem;
+
+    @media (min-width: 484px){
+        height: 12.5rem;
+    }
+    @media (min-width: 768px){
+        height: 15rem;
+    }
+    @media (min-width: 1394px){
+        height: 16.875rem;
+    }
+}

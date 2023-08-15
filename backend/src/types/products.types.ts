@@ -7,6 +7,7 @@ interface Product {
     brand: string;
     ratingCount: number;
     rating: number;
+    image: string;
 }
 
 export { Product };

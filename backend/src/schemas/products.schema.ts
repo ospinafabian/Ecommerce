@@ -10,7 +10,8 @@ const productSchema = new mongoose.Schema<Product>({
     gender: {type: String, required: true},
     brand: {type: String, required: true},
     ratingCount: { type: Number, required: true},
-    rating: { type: Number, required: true}
+    rating: { type: Number, required: true},
+    image: { type: String, required: false}
 });
 
 const ProductSchema = mongoose.model("Products", productSchema);

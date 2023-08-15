@@ -1,10 +1,26 @@
 import express from 'express';
 
-import { postClient } from '../services/clients.service';
+import { getClientById, getClientByEmail, postClient } from '../services/clients.service';
 
 import { CustomErrorFormat } from '../types/api.types'
+import { authenticateToken } from '../middlewares/jwt-validation';
 
 const router = express.Router();
+
+router.get('/:id', authenticateToken, async (req,res) =>{
+
+  try {
+    const id = req.params.id;
+
+    const serviceLayerResponse = await getClientById(id);
+    res.status(serviceLayerResponse.code).json(serviceLayerResponse.result);
+
+  }catch {
+    const customError = error as CustomErrorFormat;
+    console.log(customError.errorMessage)
+    res.status(customError.code).json(customError.message);
+  }
+});
 
 
 router.post('', async function(req, res) {

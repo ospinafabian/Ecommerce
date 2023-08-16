@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { getClientById, getClientByEmail, postClient } from '../services/clients.service';
+import { getClientById, postClient } from '../services/clients.service';
 
 import { CustomErrorFormat } from '../types/api.types'
 import { authenticateToken } from '../middlewares/jwt-validation';
@@ -15,7 +15,7 @@ router.get('/:id', authenticateToken, async (req,res) =>{
     const serviceLayerResponse = await getClientById(id);
     res.status(serviceLayerResponse.code).json(serviceLayerResponse.result);
 
-  }catch {
+  }catch (error) {
     const customError = error as CustomErrorFormat;
     console.log(customError.errorMessage)
     res.status(customError.code).json(customError.message);
@@ -23,7 +23,7 @@ router.get('/:id', authenticateToken, async (req,res) =>{
 });
 
 
-router.post('', async function(req, res) {
+router.post('/register', async function(req, res) {
     try {
       const body = req.body;
 

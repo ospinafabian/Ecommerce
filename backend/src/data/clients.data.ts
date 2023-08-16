@@ -18,10 +18,10 @@ export const readClientById = (id: string) => {
   });
 };
 
-export const readClientByEmail = (email: string): Promise<Client[]> => {
+export const readClientByUsername = (username: string): Promise<Client[]> => {
   return new Promise(async (resolve, reject) => {
     try {
-      const mongoResponse = await ClientSchema.find({ email: email });
+      const mongoResponse = await ClientSchema.find({ username: username });
 
       if (mongoResponse === null) {
         reject(404);
@@ -34,7 +34,7 @@ export const readClientByEmail = (email: string): Promise<Client[]> => {
   });
 };
 
-export const createCLient = (body: Client) => {
+export const createClient = (body: Client) => {
   return new Promise(async (resolve, reject) => {
     try {
       const client = new ClientSchema(body);

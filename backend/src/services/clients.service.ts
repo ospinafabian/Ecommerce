@@ -1,6 +1,6 @@
 import { Client } from '../types/clients.types';
 
-import { readClientById,readClientByEmail, createCLient } from '../data/clients.data';
+import { readClientById,readClientByUsername, createClient } from '../data/clients.data';
 import bcryptjs from 'bcryptjs';
 import { ServiceLayerResponse } from "../types/api.types";
 
@@ -27,9 +27,9 @@ export const getClientById = (id: string): Promise<ServiceLayerResponse<Client>>
   });
 };
 
-export const getClientByEmail = (email: string): Promise<ServiceLayerResponse<Client>> => {
+export const getClientByUsername = (username: string): Promise<ServiceLayerResponse<Client>> => {
   return new Promise((resolve, reject) => {
-    readClientByEmail(email)
+    readClientByUsername(username)
       .then((dataLayerResponse) => {
 
         if((dataLayerResponse as Client[]).length === 0){
@@ -54,7 +54,7 @@ export const postClient = (body: Client): Promise <ServiceLayerResponse<Client>>
       const hashedPassword = await bcryptjs.hash(body.password, 10);
       body.password = hashedPassword;
 
-        createCLient(body)
+        createClient(body)
           .then((dataLayerResponse) => {
             resolve ({code:201, message: dataLayerResponse as string});
           })

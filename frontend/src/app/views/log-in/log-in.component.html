@@ -22,7 +22,7 @@
 							<div class="text w-100">
 								<h2>Welcome to login</h2>
 								<p>Don't have an account?</p>
-								<a href="#" class="btn btn-white btn-outline-white">Sign Up</a>
+								<a href="#" class="btn btn-white btn-outline-white" routerLink="/register" >Sign Up</a>
 							</div>
 			      </div>
 						<div class="login-wrap p-4 p-lg-5">
@@ -40,14 +40,14 @@
 							<form action="#" class="signin-form">
 			      		<div class="form-group mb-3">
 			      			<label class="label" for="name">Username</label>
-			      			<input type="text" class="form-control" [(ngModel)]="credentials.username" placeholder="Username" required>
+			      			<input type="text" class="form-control" [(ngModel)]="credentials.username" placeholder="Username" name="username">
 			      		</div>
 		            <div class="form-group mb-3">
 		            	<label class="label" for="password">Password</label>
-		              <input type="password" class="form-control" [(ngModel)]="credentials.password" placeholder="Password" required>
+		              <input type="password" class="form-control" [(ngModel)]="credentials.password" placeholder="Password" name="password">
 		            </div>
 		            <div class="form-group">
-		            	<button type="submit" class="form-control btn btn-primary submit px-3" (click)="login()">Sign In</button>
+		            	<button type="submit" class="form-control btn btn-primary submit px-3"  (click)="login()">Sign In</button>
 		            </div>
 					<div *ngIf="isError" class="errorMessage">
 						<p>{{ errorMessage }}</p>

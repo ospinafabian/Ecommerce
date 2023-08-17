@@ -4,6 +4,9 @@ import { HttpClient } from '@angular/common/http';
 
 import { Product } from '../models/products.model';
 
+import {map} from 'rxjs/operators';
+
+
 interface ApiResponse {
     result: Product[]
 }
@@ -18,8 +21,10 @@ export class ProductService {
 
     constructor(private http: HttpClient) { }
 
-    getAllProducts () {
-        return this.http.get<ApiResponse>(API_URL);
+    getProducts () {
+        return this.http.get<ApiResponse>(API_URL).pipe(map((res:any) => {
+            return res;
+        }));
     }
 
 }

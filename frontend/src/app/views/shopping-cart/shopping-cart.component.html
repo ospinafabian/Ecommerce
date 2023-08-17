@@ -1,1 +1,63 @@
-<p>shopping-cart works!</p>
+<!-- <ng-container *ngIf="product.length !=0"> -->
+<ng-container *ngIf="products.length != 0">
+
+        <div class="container">
+            <div class="card-table">
+                <div class="cart-product">
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Nº</th>
+                                <th>Product Name</th>
+                                <th>Product Image</th>
+                                <th>Brand</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="items" *ngFor="let item of products; let i = index">
+                                <td>{{i+1}}</td>
+                                <td>{{item.name}}</td>
+                                <td><img src="{{item.image}}"></td>
+                                <td>{{item.brand}}</td>
+                                <td>{{item.price}}</td>
+                                <!-- <td>{{item.quantity}}</td>
+                                <td>{{item.total}}</td> -->
+                                <td>{{i}}</td>
+                                <td>{{item.price}}</td>
+                                <td>
+                                    <button (click)="removeItem(item)" class="btn btn-danger"></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"></td>
+                                <td><button (click)="emptyCart()" class="btn btn-danger">Empty Cart</button></td>
+                                <td><button routerLink="" class="btn btn-primary">Shop More</button></td>
+                                <td><button routerLink="/checkout" class="btn btn-success">Checkout</button></td>
+                                <td><strong>Grand Total : ${{grandTotal}}</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+
+   <ng-container *ngIf="products.length == 0">
+        <div class="container">
+            <div class="card">
+                <h5 class="card-title">My Cart</h5>
+            </div>
+            <div class="center">
+                <img class="imgEmptyCart" src="../../../assets/logos/empty-cart.png" alt="">
+                <h4>Your cart is empty!</h4>
+                <h6>Add items to it now</h6>
+                <button routerLink="" class="btn btn-primary"> Shop now</button>
+            </div>
+        </div>
+   </ng-container>
+

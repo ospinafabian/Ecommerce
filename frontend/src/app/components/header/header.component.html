@@ -9,11 +9,14 @@
     </div>
     <div class="middle-side">
         <form action="">
-            <input class="searchBar" type="search" name="search" placeholder="Search" id="">
+            <input class="searchBar" [(ngModel)]="searchTerm" (keyup)="search($event)" type="search" name="search" placeholder="Search">
         </form>
     </div>
     <div class="right-side">
-        <a routerLink="/shoppingCart" class="right-side__shoppingCart"><img src="../../../assets/logos/icons8-shopping-cart-24.png"></a>
+        <a routerLink="/shoppingCart" class="right-side__shoppingCart"><img src="../../../assets/logos/icons8-shopping-cart-24.png">
+            <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+            <div class="badge bg-danger">{{totalItem}}</div>
+        </a>
         <a routerLink="/register" class="right-side__subscribe">Subscribe</a>
         <a routerLink="/login" class="right-side__signIn">Sign In</a>
     </div>

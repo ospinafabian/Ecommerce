@@ -57,16 +57,16 @@ th{
 
 .items button{
     background: no-repeat center url('../../../assets/logos/red trash can.png');
-    width: 35px;
-    height: 35px;
+    width: 2.1875rem;
+    height: 2.1875rem;
 }
 
 .items button:hover{
     background: #7F1313 no-repeat center url('../../../assets/logos/white trash can.png');
-    width: 35px;
-    height: 35px;
+    width: 2.1875rem;
+    height: 2.1875rem;
 }
 
-/* tbody{
-    border: 1px solid black;
-} */
+td img{
+    height: 5rem;
+}

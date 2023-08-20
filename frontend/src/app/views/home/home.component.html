@@ -1,9 +1,40 @@
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+      <div class="item">
+          <a (click)="filter('')">
+              <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+              <h6>All products</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a (click)="filter('Shirts')">
+              <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
+              <h6>Shirts</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a (click)="filter('Pants')">
+              <img src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
+              <h6>Pants</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a (click)="filter('Sweatshirts')">
+              <img style="width: 62px; margin-top: 5px;" src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50" alt="">
+              <h6>Sweatshirts</h6>
+          </a>
+      </div>
+  </div>
+</div>
+
+
+
 <section class="py-5">
   <div class="container px-4 px-lg-5 mt-5">
     <div
-      class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+      class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center"
     >
-      <div *ngFor="let product of products">
+      <div *ngFor="let product of filterCategory | filter:searchKey:'name'">
         <div class="col mb-5">
           <div class="card h-100">
             <!-- Product image-->
@@ -18,7 +49,7 @@
                 <!-- Product name-->
                 <h5 class="fw-bolder">{{ product.name }}</h5>
                 <!-- Product price-->
-                {{ product.price }}
+                $ {{ product.price }}
               </div>
             </div>
             <!-- <app-star-rating [rating]='rating'></app-star-rating> -->
@@ -26,7 +57,7 @@
             <!-- Product actions-->
             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
               <div class="text-center">
-                <a (click)="addToCart(product)" class="btn btn-outline-dark mt-auto"
+                <a (click)="addtoCart(product)" class="btn btn-outline-dark mt-auto"
                   >Add to Cart</a
                 >
               </div>

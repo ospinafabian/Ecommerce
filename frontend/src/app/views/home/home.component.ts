@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { ProductService } from 'src/app/services/products.service';
 
-import { ApiService } from '../../services/api.service';
-
 import { Product } from 'src/app/models/products.model';
 
 import { CartService } from '../../services/cart.service';
@@ -11,7 +9,7 @@ import { CartService } from '../../services/cart.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  styleUrls: ['../log-in/log-in.component.css'],
 })
 export class HomeComponent implements OnInit {
   products: Product[] = [];
@@ -34,16 +32,30 @@ export class HomeComponent implements OnInit {
         this.filterCategory = data.result;
 
         this.productList.forEach((a: any) => {
+          // if (a.category === "shirts" || a.category === "pants"
           Object.assign(a, { quantity: 1, total: a.price });
         });
-      },
-      (error) => {
-        this.errorMessage = 'An error has ocurred when bringing the products';
+
+        this.cartService.search.subscribe((val: any) => {
+          this.searchKey = val;
+        })
       }
+
+      // (error) => {
+      //   this.errorMessage = 'An error has ocurred when bringing the products';
+      // }
     );
   }
 
-  addToCart(products: any) {
+  addtoCart(products: any) {
     this.cartService.addToCart(products);
+  }
+
+  filter(category:string){
+    this.filterCategory = this.productList.filter((a:any)=>{
+      if(a.category == category || category==''){
+        return a;
+      }
+    })
   }
 }

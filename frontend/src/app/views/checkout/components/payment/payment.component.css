@@ -2,12 +2,12 @@ section {
     margin: 1.875rem 1.5625rem;
 }
 
-.firstRow{
-    display: flex;
-}
-
 .form-group{
     flex-grow: .7;
+}
+
+.spacer {
+    width: 1.875rem;
 }
 
 input {
@@ -21,10 +21,6 @@ h4 {
 
 h5 {
     margin-top: 1.25rem;
-}
-
-.spacer {
-    width: 1.875rem;
 }
 
 .centerRow{

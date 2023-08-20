@@ -12,8 +12,11 @@ import { CheckoutComponent } from './views/checkout/checkout.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { StarRatingComponent } from './views/home/components/star-rating/star-rating.component';
 import { RegisterComponent } from './views/register/register.component';
-
-
+import { FilterPipe } from './shared/filter.pipe';
+import { PaymentComponent } from './views/checkout/components/payment/payment.component';
+import { ErrorComponent } from './components/error/error.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { SummaryComponent } from './views/checkout/components/summary/summary.component';
 
 
 @NgModule({
@@ -26,7 +29,12 @@ import { RegisterComponent } from './views/register/register.component';
     HeaderComponent,
     FooterComponent,
     StarRatingComponent,
-    RegisterComponent
+    RegisterComponent,
+    FilterPipe,
+    PaymentComponent,
+    ErrorComponent,
+    LoaderComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,

@@ -9,4 +9,6 @@ export interface Product {
     ratingCount: number;
     rating: number;
     image: string;
+    quantity: number;
+    total:number;
 }

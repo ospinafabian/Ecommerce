@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { Product } from 'src/app/models/products.model';
+import { Observable } from 'rxjs';
+import {map} from 'rxjs/operators';
+
 
 
 @Component({
@@ -13,20 +16,30 @@ export class ShoppingCartComponent implements OnInit {
 
   products: Product [] = [];
   // public products: any = [];
+  // public sum: Observable <number>;
 
   public grandTotal !: number;
 
-  constructor (private cartService: CartService) {}
+  constructor (private cartService: CartService, ) {}
 
   ngOnInit(): void {
       this.cartService.getProducts().subscribe(res => {
           this.products = res;
           this.grandTotal = this.cartService.getTotalPrice();
+          this.products.reduce((p, {price}) => p + price,0)
       })
   }
 
+  additemtocart(item:any){
+    this.products.push(item);
+  }
+
+  totalPrice(){
+    return this.products.reduce((p, {price}) => p + price, 0);
+  }
+
   removeItem(item:any){
-      this.cartService.removeCartItem(item);
+      this.cartService.removeItem(item);
   }
 
   emptyCart(){

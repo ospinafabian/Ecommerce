@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
+
 export class CartService {
   public cartItemList: any = [];
   public productList = new BehaviorSubject<any>([]);
@@ -56,14 +57,10 @@ export class CartService {
     return grandTotal;
   }
 
-  removeCartItem(product: any){
-      this.cartItemList.map((a:any, index:any)=>{
-      if(product.id=== a.id){
-        this.cartItemList.split(index,1);
-      }
-    })
-    this.productList.next(this.cartItemList);
-  }
+  removeItem(index: number){
+    this.cartItemList.splice(index, 1);
+    this.productList.next(this.cartItemList)
+}
 
   removeAllCart() {
     this.cartItemList = [];

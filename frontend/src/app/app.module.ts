@@ -17,6 +17,7 @@ import { PaymentComponent } from './views/checkout/components/payment/payment.co
 import { ErrorComponent } from './components/error/error.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { SummaryComponent } from './views/checkout/components/summary/summary.component';
+import { ShippingComponent } from './views/checkout/components/shipping/shipping.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { SummaryComponent } from './views/checkout/components/summary/summary.co
     PaymentComponent,
     ErrorComponent,
     LoaderComponent,
-    SummaryComponent
+    SummaryComponent,
+    ShippingComponent
   ],
   imports: [
     BrowserModule,

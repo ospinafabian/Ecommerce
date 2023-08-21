@@ -14,6 +14,8 @@ export class LogInComponent {
     username: "",
     password: ""
   }
+  isLogin = false;
+
   isError:boolean = false;
   errorMessage: string = "";
 
@@ -24,11 +26,13 @@ export class LogInComponent {
       (data: {token: string, code?: number }) => {
         if (data.code ===404) {
           this.isError = true;
+          this.isLogin=false;
           this.errorMessage = "Credentials not valid";
         } else {
           this.isError = false;
           this.authService.setToken(data.token);
           this.router.navigate(['/']);
+          this.isLogin = true;
         }
       },
       (error) => {

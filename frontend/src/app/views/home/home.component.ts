@@ -6,6 +6,9 @@ import { Product } from 'src/app/models/products.model';
 
 import { CartService } from '../../services/cart.service';
 
+import { map,reduce } from 'rxjs/operators';
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -48,7 +51,10 @@ export class HomeComponent implements OnInit {
   }
 
   addtoCart(products: any) {
+
+
     this.cartService.addToCart(products);
+
   }
 
   filter(category:string){

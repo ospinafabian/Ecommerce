@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Product } from '../models/products.model';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +12,13 @@ export class CartService {
   public productList = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");
 
+  // private cartObs$: ReplaySubject<cartItemList[]> = new ReplaySubject(1);
+
   constructor() {}
+
+  // getCartItems(): Observable<cartItemList> {
+  //   return this.cartObs$.asObservable();
+  // }
 
   getProducts() {
     return this.productList.asObservable();
@@ -22,30 +30,11 @@ export class CartService {
   }
 
   addToCart(product: any) {
-    // let sum = 1;
-    // this.cartItemList.forEach((b:any) => {
-    //   if (product.id === b.product){
-    //     b.quantity++;
-    //     b.total = b.price * b.quantity;
-    //     sum = 0
-    //     b.total.toFixed(2)
-    //     }
-    //   });
-    // if (sum==1) {
     this.cartItemList.push(product)
 
-    // this.cartItemList.push(((b:any) => {
-    //   if (product.id === b.product){
-    //     b.quantity++;
-    //     b.total = b.price * b.quantity;
-    //     b.total.toFixed(2)
-    //   }
-    // }));
-    // console.log(product)
-      // }
+
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
-    // console.log((this.cartItemList));
   }
 
   getTotalPrice(): number {

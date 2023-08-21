@@ -1,3 +1,18 @@
 <aside>
-    
+    <div>
+        <div class="title">
+            <h6>Merchandise Subtotal</h6>
+            <p>$ {{grandTotal.toFixed(2)}}</p>
+        </div>
+        <div class="title">
+        <h6>Estimated GST/HST</h6>
+        <p>$ {{(grandTotal*0.13).toFixed(2)}}</p>
+        </div>
+        <div class="title h5">
+        
+        <h5><b>Estimated total</b></h5>
+        <h5><b>$ {{(grandTotal*1.13).toFixed(2)}}</b></h5>
+        </div>
+    </div>
+    <button>Place Order</button>
 </aside>

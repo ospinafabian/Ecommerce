@@ -1,0 +1,60 @@
+section {
+    margin: 1.875rem 1.5625rem;
+}
+
+ .firstRow{
+    @media (min-width: 810px) {
+        display: flex;
+    }
+}
+
+ .form-group{
+    flex-grow: .7;
+}
+
+input {
+    border-radius: 1.25rem;
+}
+
+h4 {
+    margin: 1.25rem 0rem;
+    border: none;
+}
+
+h5 {
+    margin-top: 1.25rem;
+}
+
+.spacer {
+    width: 1.875rem;
+}
+
+.centerRow{
+    @media (min-width: 810px) {
+        display: flex;
+    }
+}
+
+.bottomRow {
+    @media (min-width: 810px) {
+        display: flex;
+    }
+}
+
+button {
+    width: 12.5rem;
+    margin: 1.25rem 0rem 1.25rem;
+    border-radius: 1.25rem;
+}
+
+.hide {
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.title {
+    display: inline-block;
+}

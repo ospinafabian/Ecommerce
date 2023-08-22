@@ -27,7 +27,6 @@ router.post('/login', async (req,res) => {
             const token = jwt.sign(payload, process.env.JWT_SECRET as string, {expiresIn:'30d'});
 
             res.status(200).json({token});
-            console.log(token)
         } else {
 
             res.status(403).json({message: "Incorrect username or password"});

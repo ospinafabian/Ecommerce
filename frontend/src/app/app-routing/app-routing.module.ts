@@ -7,9 +7,17 @@ import {CheckoutComponent} from '../views/checkout/checkout.component';
 import {ShoppingCartComponent} from '../views/shopping-cart/shopping-cart.component';
 
 
+// const routes: Routes = [
+//   {path: '', component: HomeComponent },
+//   {path: 'login', component: LogInComponent },
+//   {path: 'register', component: RegisterComponent },
+//   {path: 'checkout', component: CheckoutComponent },
+//   {path: 'shoppingCart', component: ShoppingCartComponent }
+// ];
+
 const routes: Routes = [
-  {path: '', component: HomeComponent },
-  {path: 'login', component: LogInComponent },
+  {path: '', component: LogInComponent },
+  {path: 'products', component: HomeComponent },
   {path: 'register', component: RegisterComponent },
   {path: 'checkout', component: CheckoutComponent },
   {path: 'shoppingCart', component: ShoppingCartComponent }

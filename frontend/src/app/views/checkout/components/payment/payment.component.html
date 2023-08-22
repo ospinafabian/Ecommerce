@@ -70,11 +70,30 @@
             </div>
           </div>
       <div class="form-group">
-        <button type="submit" class="form-control btn btn-primary submit">
+        <button type="submit" class="form-control btn btn-primary submit" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Place Order
         </button>
       </div>
     </form>
     <div class="line"></div>
   </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Order Completed</h1>
+      </div>
+      <div class="modal-body">
+        Order has been placed successfully!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" routerLink="/products" data-bs-dismiss="modal">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </section>

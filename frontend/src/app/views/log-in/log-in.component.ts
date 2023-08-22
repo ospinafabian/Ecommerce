@@ -2,15 +2,19 @@ import { Component } from '@angular/core';
 
 import { Router } from '@angular/router';
 
-import { AuthService } from '../../services/auth.service'
+import { AuthService } from '../../services/auth.service';
+
+
 
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
+  // styleUrls: ['./log-in.component.css','../../components/header/header.component.css']
   styleUrls: ['./log-in.component.css']
+
 })
 export class LogInComponent {
-  credentials = {
+  public credentials = {
     username: "",
     password: ""
   }
@@ -31,7 +35,7 @@ export class LogInComponent {
         } else {
           this.isError = false;
           this.authService.setToken(data.token);
-          this.router.navigate(['/']);
+          this.router.navigate(['/products']);
           this.isLogin = true;
         }
       },

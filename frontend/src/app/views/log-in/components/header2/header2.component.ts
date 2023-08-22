@@ -4,11 +4,11 @@ import { Client } from 'src/app/models/clients.model';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
+  selector: 'app-header2',
+  templateUrl: './header2.component.html',
+  styleUrls: ['./header2.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class Header2Component implements OnInit {
   id: string | null = '';
 
   customer: Client = {

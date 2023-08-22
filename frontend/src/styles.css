@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=monserrat&display=swap");
+
 /* You can add global styles to this file, and also import other style files */
 *{
-    font-family: "monserrat", monospace;
+    font-family: "monserrat", monospace !important;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -87,11 +89,6 @@
   --bs-highlight-bg: #fff3cd;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   :root {
@@ -601,9 +598,9 @@ progress {
   font-size: 0.875em;
   color: #6c757d;
 }
-.blockquote-footer::before {
+/* .blockquote-footer::before {
   content: "— ";
-}
+} */
 
 .img-fluid {
   max-width: 100%;
@@ -3208,7 +3205,7 @@ textarea.form-control-lg {
 .dropdown-toggle {
   white-space: nowrap;
 }
-.dropdown-toggle::after {
+/* .dropdown-toggle::after {
   display: inline-block;
   margin-left: 0.255em;
   vertical-align: 0.255em;
@@ -3220,7 +3217,7 @@ textarea.form-control-lg {
 }
 .dropdown-toggle:empty::after {
   margin-left: 0;
-}
+} */
 
 .dropdown-menu {
   --bs-dropdown-zindex: 1000;
@@ -3372,7 +3369,7 @@ textarea.form-control-lg {
   margin-top: 0;
   margin-bottom: var(--bs-dropdown-spacer);
 }
-.dropup .dropdown-toggle::after {
+/* .dropup .dropdown-toggle::after {
   display: inline-block;
   margin-left: 0.255em;
   vertical-align: 0.255em;
@@ -3381,7 +3378,7 @@ textarea.form-control-lg {
   border-right: 0.3em solid transparent;
   border-bottom: 0.3em solid;
   border-left: 0.3em solid transparent;
-}
+} */
 .dropup .dropdown-toggle:empty::after {
   margin-left: 0;
 }
@@ -5749,7 +5746,7 @@ textarea.form-control-lg {
   display: block;
   width: var(--bs-popover-arrow-width);
   margin-left: calc(-0.5 * var(--bs-popover-arrow-width));
-  content: "";
+  /* content: ""; */
   border-bottom: var(--bs-popover-border-width) solid var(--bs-popover-header-bg);
 }
 

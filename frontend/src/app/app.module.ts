@@ -18,6 +18,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { SummaryComponent } from './views/checkout/components/summary/summary.component';
 import { ShippingComponent } from './views/checkout/components/shipping/shipping.component';
+import { Header2Component } from './views/log-in/components/header2/header2.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { ShippingComponent } from './views/checkout/components/shipping/shipping
     ErrorComponent,
     LoaderComponent,
     SummaryComponent,
-    ShippingComponent
+    ShippingComponent,
+    Header2Component
   ],
   imports: [
     BrowserModule,

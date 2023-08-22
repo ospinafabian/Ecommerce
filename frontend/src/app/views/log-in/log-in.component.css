@@ -1,12 +1,9 @@
-.card-top {
+.filters{
   background-color: #c0dcf11e;
-  display: none;
-  @media (min-width:768px) {
     display: flex;
-    flex-wrap: wrap !important ;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-}
-
 
 :root {
     --blue: #007bff;
@@ -8265,6 +8262,7 @@
   .checkmark:after {
     content: "\f0c8";
     font-family: "FontAwesome";
+    border: 1px solid inherit;
     position: absolute;
     color: rgba(0, 0, 0, 0.1);
     font-size: 20px;
